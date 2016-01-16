@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="apiApp">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub API Experiment</title>
+    <link rel="stylesheet" href="views/stylesheet.css">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+</head>
+<body ng-controller="apiController">
+    <div class="jumbotron">
+        <h1>GitHub API Experiment</h1>
+    </div>
+
+    <div class="container">
+        <form>
+            This search function doesn't work, but it looks kind of nice! <br>
+            <input type="text" placeholder="GitHub Username" ng-model="username">
+            <button ng-click="search()">Search</button>
+        </form>
+    </div><br>
+
+    <div class="container">
+        <ul class="wells">
+            <li class="list-group-item" class="col-md-6"  ng-repeat="data in data.results.data">
+                {{data.repo.name}}<br>
+                {{data.repo.url}}<br>
+             </li>
+        </ul>
+    </div>
+</body>
+</html>
